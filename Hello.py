@@ -1,13 +1,15 @@
 from flask import Flask
+
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+@app.route("/")
+def index():
+    x = 2 + 2
+    return f"Hello World! {x}"
 
-@app.route('/new_page')
-def new_page():
-    return 'This is another page'
+@app.route("/about")
+def about():
+    return "About me"
 
 # on Windows:
 # export FLASK_APP=hello.py ( in some case use "set" instead of export)
@@ -18,3 +20,5 @@ def new_page():
 
 if __name__=="__main__":
     app.run(debug=True)
+    
+
